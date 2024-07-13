@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://4ludglw3ur2h"]
+
+[ext_resource type="PackedScene" uid="uid://0jkv32ol2tf5" path="res://scenes/test_tube.tscn" id="1_njnru"]
+[ext_resource type="Texture2D" uid="uid://jtmw3qol2nap" path="res://icon.svg" id="2_jv54x"]
+[ext_resource type="Script" path="res://scripts/Mixer.gd" id="3_d3cpu"]
+
+[node name="Lab" type="Node2D"]
+
+[node name="TestTube" parent="." instance=ExtResource("1_njnru")]
+position = Vector2(182, 138)
+_color = Color(1, 0, 0, 1)
+
+[node name="TestTube2" parent="." instance=ExtResource("1_njnru")]
+position = Vector2(719, 133)
+_color = Color(0, 1, 0, 1)
+
+[node name="TestTube3" parent="." instance=ExtResource("1_njnru")]
+position = Vector2(183, 339)
+_color = Color(0, 0, 1, 1)
+
+[node name="TestTube4" parent="." instance=ExtResource("1_njnru")]
+position = Vector2(741, 363)
+_color = Color(1, 0.933333, 0, 1)
+
+[node name="Mixer" type="Sprite2D" parent="."]
+position = Vector2(466, 242)
+texture = ExtResource("2_jv54x")
+script = ExtResource("3_d3cpu")
