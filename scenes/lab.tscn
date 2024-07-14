@@ -1,28 +1,121 @@
-[gd_scene load_steps=4 format=3 uid="uid://4ludglw3ur2h"]
+[gd_scene load_steps=9 format=3 uid="uid://4ludglw3ur2h"]
 
+[ext_resource type="Script" path="res://scripts/CombinationChecker.gd" id="1_i7vdu"]
 [ext_resource type="PackedScene" uid="uid://0jkv32ol2tf5" path="res://scenes/test_tube.tscn" id="1_njnru"]
 [ext_resource type="Texture2D" uid="uid://jtmw3qol2nap" path="res://icon.svg" id="2_jv54x"]
 [ext_resource type="Script" path="res://scripts/Mixer.gd" id="3_d3cpu"]
+[ext_resource type="PackedScene" uid="uid://62jupnddetls" path="res://scenes/mark.tscn" id="4_1ht0f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0b2dk"]
+size = Vector2(128, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c4c1i"]
+size = Vector2(100, 100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3ekam"]
+size = Vector2(128, 128)
 
 [node name="Lab" type="Node2D"]
+script = ExtResource("1_i7vdu")
 
 [node name="TestTube" parent="." instance=ExtResource("1_njnru")]
-position = Vector2(182, 138)
+position = Vector2(132, 107)
 _color = Color(1, 0, 0, 1)
 
 [node name="TestTube2" parent="." instance=ExtResource("1_njnru")]
-position = Vector2(719, 133)
+position = Vector2(825, 118)
 _color = Color(0, 1, 0, 1)
+n = 2
 
 [node name="TestTube3" parent="." instance=ExtResource("1_njnru")]
-position = Vector2(183, 339)
+position = Vector2(353, 113)
 _color = Color(0, 0, 1, 1)
+n = 1
 
 [node name="TestTube4" parent="." instance=ExtResource("1_njnru")]
-position = Vector2(741, 363)
+position = Vector2(1015, 124)
 _color = Color(1, 0.933333, 0, 1)
+n = 3
 
-[node name="Mixer" type="Sprite2D" parent="."]
-position = Vector2(466, 242)
-texture = ExtResource("2_jv54x")
+[node name="Mixer" type="Area2D" parent="."]
+position = Vector2(575, 227)
 script = ExtResource("3_d3cpu")
+
+[node name="Sprite2D" type="Sprite2D" parent="Mixer"]
+texture = ExtResource("2_jv54x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mixer"]
+shape = SubResource("RectangleShape2D_0b2dk")
+
+[node name="Mark" parent="." instance=ExtResource("4_1ht0f")]
+position = Vector2(164, 441)
+n = 1
+
+[node name="Mark2" parent="." instance=ExtResource("4_1ht0f")]
+position = Vector2(364, 443)
+n = 2
+
+[node name="Area2D" type="Area2D" parent="." groups=["stick"]]
+position = Vector2(132, 309)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_c4c1i")
+
+[node name="Area2D2" type="Area2D" parent="." groups=["stick"]]
+position = Vector2(351, 306)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+shape = SubResource("RectangleShape2D_c4c1i")
+
+[node name="Area2D4" type="Area2D" parent="." groups=["stick"]]
+position = Vector2(1025, 304)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D4"]
+shape = SubResource("RectangleShape2D_c4c1i")
+
+[node name="Area2D3" type="Area2D" parent="." groups=["stick"]]
+position = Vector2(824, 298)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D3"]
+shape = SubResource("RectangleShape2D_c4c1i")
+
+[node name="Area2D5" type="Area2D" parent="." groups=["stick"]]
+position = Vector2(141, 573)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D5"]
+shape = SubResource("RectangleShape2D_c4c1i")
+
+[node name="Area2D6" type="Area2D" parent="." groups=["stick"]]
+position = Vector2(360, 570)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D6"]
+shape = SubResource("RectangleShape2D_c4c1i")
+
+[node name="Area2D7" type="Area2D" parent="." groups=["stick"]]
+position = Vector2(1034, 568)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D7"]
+shape = SubResource("RectangleShape2D_c4c1i")
+
+[node name="Area2D8" type="Area2D" parent="." groups=["stick"]]
+position = Vector2(833, 562)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D8"]
+shape = SubResource("RectangleShape2D_c4c1i")
+
+[node name="Flush" type="Area2D" parent="."]
+position = Vector2(585, 553)
+
+[node name="Sprite2D" type="Sprite2D" parent="Flush"]
+texture = ExtResource("2_jv54x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Flush"]
+shape = SubResource("RectangleShape2D_3ekam")
+
+[node name="Mark3" parent="." instance=ExtResource("4_1ht0f")]
+position = Vector2(834, 435)
+n = 3
+
+[node name="Mark4" parent="." instance=ExtResource("4_1ht0f")]
+position = Vector2(1018, 437)
+n = 4

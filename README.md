@@ -14,18 +14,31 @@ Wildcards:
 
 # About
 
-Name: ?
+Name: Unpredictable Chemistry
 
-Genre: ?
+Genre: Puzzle
+
+Game loop: look at list of reactions -> combine unknown liquids -> figure out what this liquids are -> assign number to liquid -> if your guess is right you pass level -> next level
 
 Key features:
-- ?
-- ?
-- ?
-Game loop: ?
+- [ ] Combine two liquid
+- [ ] Rules for reactions
+- [ ] List of known reactions
+- [ ] Reaction types
+- - [ ] Explosion
+- - [ ] Change color
+- - [ ] Solid fall
+- [ ] Statistic (time, number of combinations)
+
+Additional features
+- [ ] Dialogue system
+- [ ] Arms animation
+- [ ] Eyes animation
+- [ ] Dust on face after explosion
+- [ ] Nice background
 
 References:
-- ?
+- Liquid sort puzzle
 - ?
 - ?
 
