@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://0jkv32ol2tf5"]
+[gd_scene load_steps=7 format=3 uid="uid://0jkv32ol2tf5"]
 
-[ext_resource type="Texture2D" uid="uid://jtmw3qol2nap" path="res://icon.svg" id="1_m5aqc"]
 [ext_resource type="Script" path="res://scripts/test_tube.gd" id="1_xqyuu"]
+[ext_resource type="Texture2D" uid="uid://f1rxngcl0wla" path="res://sprites/liquid_template.svg" id="2_csmqp"]
+[ext_resource type="Texture2D" uid="uid://w827eama20k7" path="res://sprites/empty_test_tube.svg" id="3_noh7w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eiecl"]
-size = Vector2(128, 128)
+size = Vector2(45, 148)
 
 [sub_resource type="LabelSettings" id="LabelSettings_8tci0"]
 line_spacing = 14.0
@@ -12,15 +13,21 @@ font_size = 82
 font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hxwrk"]
-size = Vector2(146, 319)
+size = Vector2(72, 300)
 
 [node name="TestTube" type="Area2D"]
 script = ExtResource("1_xqyuu")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_m5aqc")
+[node name="Liquid" type="Sprite2D" parent="."]
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("2_csmqp")
+
+[node name="Tube" type="Sprite2D" parent="."]
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("3_noh7w")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 8)
 shape = SubResource("RectangleShape2D_eiecl")
 
 [node name="Label" type="Label" parent="."]

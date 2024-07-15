@@ -28,14 +28,11 @@ Key features:
 - - [ ] Explosion
 - - [ ] Change color
 - - [ ] Solid fall
-- [ ] Statistic (time, number of combinations)
 
 Additional features
-- [ ] Dialogue system
-- [ ] Arms animation
-- [ ] Eyes animation
-- [ ] Dust on face after explosion
+- [ ] Tutorial
 - [ ] Nice background
+- [ ] Statistic (time, number of combinations)
 
 References:
 - Liquid sort puzzle

@@ -1,37 +1,14 @@
-class_name Mixer
+class_name MixerAccept
 
 extends Draggable
 
 var ingredients: Array[int]
 var reactions: Array[Reaction]
 var clicks: int = 0
-var liquid: Sprite2D
-var last_interactable_object: TestTube = null
+@onready var liquid: Sprite2D = $Liquid
 
 func _ready() -> void:
 	super._ready()
-	area_entered.connect(_on_area_entered)
-	area_exited.connect(_on_area_exited)
-	liquid = get_node("Sprite2D")
-	
-
-func _on_area_entered(other: Area2D) -> void:
-	if other is TestTube:
-		last_interactable_object = other
-		last_interactable_object.drop.connect(_on_drop)
-	if other.name == "Flush":
-		flush()
-		dragged = false
-
-func _on_area_exited(other: Area2D) -> void:
-	if other == last_interactable_object:
-		last_interactable_object.drop.disconnect(_on_drop)
-		last_interactable_object = null
-
-func _on_drop() -> void:
-	if last_interactable_object != null:
-		mix(last_interactable_object.n, last_interactable_object._color)
-		dragged = false
 
 func mix(number: int, color: Color) -> void:
 	print(number)

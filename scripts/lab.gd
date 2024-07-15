@@ -1,6 +1,6 @@
 class_name Lab
 
-extends Node
+extends Node2D
 
 @export var N: int = 3
 var testTubePrefab: PackedScene = load("res://scenes/test_tube.tscn")
@@ -29,9 +29,12 @@ func _ready() -> void:
 		r.print()
 
 	# find all tube holders
-	for tubeHolder in find_children("Holder*"):
+	for tubeHolder in find_children("*Holder*"):
 		if tubeHolder.is_in_group("Holder"):
 			tubeHolders.append(tubeHolder)
+			print(tubeHolder.position)
+
+	tubeHolders.shuffle()
 
 	# Set test tubes
 	for i in range(0, N):
@@ -40,6 +43,7 @@ func _ready() -> void:
 		testTube.value_changed.connect(check)
 		testTubes.append(testTube)
 		tubeHolders[i].add_child(testTube)
+		# testTube.position = to_global(.position)
 
 	# setup mixer
 	mixer.reactions = reactions.duplicate()

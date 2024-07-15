@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg58247"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   sodipodi:docname="mixer_stand.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview58249"
+     pagecolor="#505050"
+     bordercolor="#ffffff"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     inkscape:document-units="mm"
+     showgrid="true"
+     inkscape:snap-grids="false"
+     inkscape:snap-object-midpoints="true"
+     inkscape:zoom="0.74029882"
+     inkscape:cx="298.5281"
+     inkscape:cy="676.75375"
+     inkscape:window-width="1920"
+     inkscape:window-height="1011"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1">
+    <inkscape:grid
+       type="xygrid"
+       id="grid58401" />
+  </sodipodi:namedview>
+  <defs
+     id="defs58244" />
+  <g
+     inkscape:label="Слой 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:#2e3344;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:3.40437;stroke-linecap:square;stroke-miterlimit:4;stroke-dasharray:none"
+       id="rect65458"
+       width="182.5625"
+       height="113.77083"
+       x="15.875"
+       y="134.9375"
+       rx="7.6666617"
+       ry="10.749992" />
+    <rect
+       style="fill:#606992;fill-rule:evenodd;stroke:#000000;stroke-width:3;stroke-linecap:square;fill-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       id="rect58295"
+       width="168.28976"
+       height="65.449425"
+       x="22.210232"
+       y="140.92557"
+       rx="8"
+       ry="8" />
+    <path
+       style="fill:#292e2b;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:3;stroke-linecap:square;stroke-miterlimit:4;stroke-dasharray:none"
+       id="path66156"
+       sodipodi:type="arc"
+       sodipodi:cx="48.201523"
+       sodipodi:cy="226.59334"
+       sodipodi:rx="19.84375"
+       sodipodi:ry="13.229166"
+       sodipodi:start="2.8664497"
+       sodipodi:end="2.8654641"
+       sodipodi:open="true"
+       sodipodi:arc-type="arc"
+       d="m 29.104168,230.1875 a 19.84375,13.229166 0 0 1 13.70141,-16.32485 19.84375,13.229166 0 0 1 24.49064,9.13025 19.84375,13.229166 0 0 1 -13.68934,16.32935 19.84375,13.229166 0 0 1 -24.497387,-9.12221" />
+    <path
+       style="fill:#292e2b;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:3;stroke-linecap:square;stroke-miterlimit:4;stroke-dasharray:none"
+       id="path66259"
+       sodipodi:type="arc"
+       sodipodi:cx="167.2587"
+       sodipodi:cy="226.5808"
+       sodipodi:rx="19.84375"
+       sodipodi:ry="13.229166"
+       sodipodi:start="2.8664497"
+       sodipodi:end="2.8654641"
+       sodipodi:open="true"
+       sodipodi:arc-type="arc"
+       d="m 148.16134,230.17495 a 19.84375,13.229166 0 0 1 13.70141,-16.32484 19.84375,13.229166 0 0 1 24.49064,9.13025 19.84375,13.229166 0 0 1 -13.68934,16.32934 19.84375,13.229166 0 0 1 -24.49738,-9.1222" />
+    <rect
+       style="fill:#032b01;fill-opacity:1;fill-rule:evenodd;stroke:#696969;stroke-width:3.14643;stroke-linecap:square;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect66283"
+       width="58.20834"
+       height="29.104162"
+       x="79.375"
+       y="211.66667"
+       rx="8.7312574"
+       ry="7.9999948" />
+    <rect
+       style="fill:#292e2b;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:3;stroke-linecap:square;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect68915"
+       width="10.583333"
+       height="18.520834"
+       x="42.909855"
+       y="217.33292"
+       rx="5.2916665"
+       ry="2.6458385" />
+    <rect
+       style="fill:#292e2b;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:3;stroke-linecap:square;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect72878"
+       width="10.583333"
+       height="18.520834"
+       x="270.28116"
+       y="48.825211"
+       rx="5.2916665"
+       ry="2.6458385"
+       transform="rotate(41.663136)" />
+  </g>
+</svg>

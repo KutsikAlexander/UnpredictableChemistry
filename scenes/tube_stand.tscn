@@ -1,0 +1,54 @@
+[gd_scene load_steps=2 format=3 uid="uid://kwyod5osd1ko"]
+
+[ext_resource type="Texture2D" uid="uid://bea26v7fk60kx" path="res://sprites/tube_frame_tilemap.svg" id="1_l3xm2"]
+
+[node name="Stand" type="Node2D"]
+
+[node name="Scaler" type="Node2D" parent="."]
+scale = Vector2(0.15, 0.15)
+
+[node name="RightTop" type="Sprite2D" parent="Scaler"]
+position = Vector2(-275, -454)
+texture = ExtResource("1_l3xm2")
+region_enabled = true
+region_rect = Rect2(0, 0, 550, 304)
+
+[node name="RightMiddle" type="Sprite2D" parent="Scaler"]
+z_index = 1
+position = Vector2(-275, -50)
+texture = ExtResource("1_l3xm2")
+region_enabled = true
+region_rect = Rect2(0, 304, 550, 504)
+
+[node name="RightBottom" type="Sprite2D" parent="Scaler"]
+z_index = -1
+position = Vector2(-275, 406)
+texture = ExtResource("1_l3xm2")
+region_enabled = true
+region_rect = Rect2(0, 808, 550, 408)
+
+[node name="LeftTop" type="Sprite2D" parent="Scaler"]
+position = Vector2(272, -454)
+texture = ExtResource("1_l3xm2")
+region_enabled = true
+region_rect = Rect2(80, 0, 544, 304)
+
+[node name="LeftMiddle" type="Sprite2D" parent="Scaler"]
+z_index = 1
+position = Vector2(272, -50)
+texture = ExtResource("1_l3xm2")
+region_enabled = true
+region_rect = Rect2(80, 304, 544, 504)
+
+[node name="LeftBottom" type="Sprite2D" parent="Scaler"]
+z_index = -1
+position = Vector2(272, 406)
+texture = ExtResource("1_l3xm2")
+region_enabled = true
+region_rect = Rect2(80, 808, 544, 408)
+
+[node name="RightHolder" type="Node2D" parent="." groups=["Holder"]]
+position = Vector2(-34, -10)
+
+[node name="LeftHolder" type="Node2D" parent="." groups=["Holder"]]
+position = Vector2(37, -10)

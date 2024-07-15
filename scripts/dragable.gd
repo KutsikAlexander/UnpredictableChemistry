@@ -19,15 +19,20 @@ func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.is_pressed():
 		if in_focus:
 			dragged = !dragged
+		
 		if dragged:
 			picked_up.emit()
+			z_index=2
 		else:
 			drop.emit()
+			dragged = false
+			position = original_position
+			z_index=0
 
 	if event is InputEventMouseMotion:
 		mouse_position = to_global(to_local(event.position))
 		if dragged:
-			position = mouse_position
+			global_position = mouse_position
 		else:
 			position = original_position
 

@@ -2,31 +2,30 @@ class_name TestTube
 
 extends Draggable
 
-@export_color_no_alpha var _color: Color
+@export_color_no_alpha var color: Color
 @export var n: int
 var m: int = 0
-var label: Label
-var label_pivot: Node2D
-var mark: Mark = null
+@onready var label: Label = $Label
+@onready var liquid: Sprite2D = $Liquid
 var buttons: Array[Button]
 
 signal value_changed
 
 func _ready() -> void:
 	super._ready()
-	get_node("Sprite2D").self_modulate = _color
-	label = get_node("Label")
+	liquid.self_modulate = color
 	label.text = "?"
-	label_pivot = get_node("LabelPivot")
 	for button in find_children("*Button*", "Button"):
 		if button is Button:
 			buttons.append(button)
 	hide_buttons()
 	picked_up.connect(hide_buttons)
 
-func set_properties(_n: int, color: Color) -> void:
-	n = _n
-	_color = color
+func set_properties(_n: int, _color: Color) -> void:
+	self.n = _n
+	color = _color
+	if is_node_ready():
+		liquid.self_modulate = color
 
 func increase_value() -> void:
 	m+=1
