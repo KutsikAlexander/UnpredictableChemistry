@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://4ludglw3ur2h"]
+[gd_scene load_steps=17 format=3 uid="uid://4ludglw3ur2h"]
 
 [ext_resource type="Script" path="res://scripts/lab.gd" id="1_i7vdu"]
 [ext_resource type="Texture2D" uid="uid://drhj68c5oxcyp" path="res://sprites/mixer_stand.svg" id="2_mluja"]
@@ -11,7 +11,9 @@
 [ext_resource type="Texture2D" uid="uid://v4pu6nbwah6b" path="res://sprites/sink.svg" id="6_t1uyr"]
 [ext_resource type="Script" path="res://scripts/sink.gd" id="6_w2agn"]
 [ext_resource type="Texture2D" uid="uid://bn8w1dnngpjus" path="res://sprites/solid_fall_template.svg" id="7_jeuyh"]
+[ext_resource type="Texture2D" uid="uid://cv03g7kc1o8ro" path="res://sprites/bubble.svg" id="8_26sa1"]
 [ext_resource type="PackedScene" uid="uid://kwyod5osd1ko" path="res://scenes/tube_stand.tscn" id="8_u07wo"]
+[ext_resource type="Texture2D" uid="uid://cs2dypc2mrri5" path="res://sprites/explosion_particle.svg" id="10_gb5sl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0b2dk"]
 size = Vector2(103, 134)
@@ -68,6 +70,25 @@ texture = ExtResource("3_gmhi4")
 scale = Vector2(0.148, 0.15)
 texture = ExtResource("7_jeuyh")
 
+[node name="Reaction" type="CPUParticles2D" parent="Mixer/Acceptor"]
+emitting = false
+amount = 15
+lifetime = 2.0
+one_shot = true
+lifetime_randomness = 0.28
+texture = ExtResource("8_26sa1")
+emission_shape = 3
+emission_rect_extents = Vector2(30, 30)
+direction = Vector2(0, -1)
+spread = 0.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 100.0
+initial_velocity_max = 100.0
+linear_accel_min = 1.0
+linear_accel_max = 2.0
+scale_amount_min = 0.1
+scale_amount_max = 0.2
+
 [node name="Tube" type="Sprite2D" parent="Mixer/Acceptor"]
 scale = Vector2(0.15, 0.15)
 texture = ExtResource("4_opbko")
@@ -75,6 +96,23 @@ texture = ExtResource("4_opbko")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Mixer/Acceptor"]
 position = Vector2(0.5, 6)
 shape = SubResource("RectangleShape2D_0b2dk")
+
+[node name="Explosion" type="CPUParticles2D" parent="Mixer/Acceptor"]
+emitting = false
+lifetime = 2.0
+one_shot = true
+explosiveness = 1.0
+randomness = 0.2
+lifetime_randomness = 0.13
+texture = ExtResource("10_gb5sl")
+emission_shape = 3
+emission_rect_extents = Vector2(5, 3)
+direction = Vector2(0, -1)
+initial_velocity_min = 300.0
+initial_velocity_max = 650.0
+angular_velocity_max = 350.0
+scale_amount_min = 0.3
+scale_amount_max = 0.5
 
 [node name="Sink" type="Area2D" parent="."]
 position = Vector2(587, 542)

@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://w827eama20k7" path="res://sprites/empty_test_tube.svg" id="3_h6uwb"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_msn4k"]
-font_size = 72
+font_size = 50
 font_color = Color(0, 0, 0, 1)
 
 [node name="ListItemComponent" type="Control"]

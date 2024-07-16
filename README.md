@@ -21,13 +21,15 @@ Genre: Puzzle
 Game loop: look at list of reactions -> combine unknown liquids -> figure out what this liquids are -> assign number to liquid -> if your guess is right you pass level -> next level
 
 Key features:
-- [ ] Combine two liquid
-- [ ] Rules for reactions
-- [ ] List of known reactions
-- [ ] Reaction types
-- - [ ] Explosion
-- - [ ] Change color
-- - [ ] Solid fall
+- [x] Combine two liquid
+- [x] Rules for reactions
+- [x] List of known reactions
+- [x] Reaction types
+- - [x] Explosion
+- - [x] Change color
+- - [x] Solid fall
+- [ ] Menu
+- [ ] Next level button
 
 Additional features
 - [ ] Tutorial

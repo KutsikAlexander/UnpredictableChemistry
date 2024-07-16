@@ -9,11 +9,13 @@ var clicks: int = 0
 @onready var solid: Sprite2D = $Solid
 @onready var tube: Sprite2D = $Tube
 
+@onready var reaction_particle: CPUParticles2D = $Reaction
+@onready var explosion_particle = $Explosion
+
 @export var empty_mixer: Texture2D = load("res://sprites/mixer_template.svg")
 @export var broken_mixer: Texture2D = load("res://sprites/broken_mixer.svg")
 @export var mixer_liquid: Texture2D = load("res://sprites/mixer_liquid_template.svg")
 @export var solid_fall: Texture2D = load("res://sprites/solid_fall_template.svg")
-@export var explosion: Texture2D = load("res://sprites/explosion_particle.svg")
 
 func _ready() -> void:
 	super._ready()
@@ -61,9 +63,14 @@ func show_reaction(reaction: Reaction) -> void:
 		Reaction.ReactionType.EXPLOSION:
 			liquid.self_modulate = Color.TRANSPARENT
 			tube.texture = broken_mixer
+			explosion_particle.color = reaction.color
+			explosion_particle.emitting = true
 		Reaction.ReactionType.CHANGECOLOR:
 			liquid.self_modulate = reaction.color
+			reaction_particle.color = reaction.color
+			reaction_particle.emitting = true
 		Reaction.ReactionType.SOLIDFALL:
 			solid.self_modulate = reaction.color
+			reaction_particle.color = reaction.color
+			reaction_particle.emitting = true
 
-	
