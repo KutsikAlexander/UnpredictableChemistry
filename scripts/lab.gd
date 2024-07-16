@@ -46,7 +46,7 @@ func _ready() -> void:
 	# Set test tubes
 	for i in range(0, N):
 		var testTube:TestTube = testTubePrefab.instantiate()
-		testTube.set_properties(i, tubeColors[i])
+		testTube.set_properties(i, tubeColors[i], N)
 		testTube.value_changed.connect(check)
 		testTubes.append(testTube)
 		tubeHolders[i].add_child(testTube)

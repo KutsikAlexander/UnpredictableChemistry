@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://beyddr53yy11b"]
+[gd_scene load_steps=4 format=3 uid="uid://beyddr53yy11b"]
 
 [ext_resource type="Script" path="res://scripts/list.gd" id="1_87i2k"]
 [ext_resource type="PackedScene" uid="uid://dtb35qb0m2hg3" path="res://scenes/list_item.tscn" id="1_kcabi"]
+[ext_resource type="Theme" uid="uid://hvrrbb8ywrwe" path="res://themes/list_theme.tres" id="1_scgnl"]
 
 [node name="List" type="Control"]
 layout_mode = 3
@@ -10,6 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_scgnl")
 script = ExtResource("1_87i2k")
 
 [node name="Button" type="Button" parent="."]

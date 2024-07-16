@@ -2,6 +2,7 @@ class_name ListItemComponent
 
 extends Control
 
+@onready var panel: PanelContainer = $PanelContainer
 @onready var label: Label = $PanelContainer/Label
 @onready var liquid: TextureRect = $PanelContainer/Liquid
 @onready var tube: TextureRect = $PanelContainer/Tube
@@ -17,13 +18,18 @@ func set_component_properties(text: String, color: Color, type: Reaction.Reactio
 	label.text = text
 	liquid.self_modulate = color
 	if text == "":
+		var tooltip_reaction: String = ""
 		match type:
 			Reaction.ReactionType.EXPLOSION:
 				liquid.texture = explosion
 				tube.texture = broken_mixer
+				tooltip_reaction = "Explosion"
 			Reaction.ReactionType.CHANGECOLOR:
 				liquid.texture = mixer_liquid
 				tube.texture = empty_mixer
+				tooltip_reaction = "Change color"
 			Reaction.ReactionType.SOLIDFALL:
 				liquid.texture = solid_fall
 				tube.texture = empty_mixer
+				tooltip_reaction = "Precipitate"
+		panel.tooltip_text = "Reaction: " + tooltip_reaction + "\nColor: #" + str(color.to_html(false))

@@ -27,6 +27,8 @@ var clicks: int = 0
 @export var reaction_sounds: Array[AudioStream]
 @export var explosion_sounds: Array[AudioStream]
 
+@onready var tooltip: Control = $Tooltip
+
 func _ready() -> void:
 	super._ready()
 	flush(false)
@@ -39,6 +41,7 @@ func mix(number: int, color: Color) -> void:
 	print(number)
 	if clicks == 0:
 		liquid.self_modulate = color
+		tooltip.tooltip_text = "Color: #" + str(color.to_html(false))
 		audio_stream.stream = water_sounds[randi()%water_sounds.size()]
 		audio_stream.playing = true
 		ingredients.push_back(number)
@@ -71,25 +74,29 @@ func flush(with_sound: bool = true) -> void:
 		audio_stream.playing = true
 	ingredients.clear()
 	clicks = 0
-	print("Mixer is clear")
+	tooltip.tooltip_text = "Empty mixer"
 
 func show_reaction(reaction: Reaction) -> void:
+	var tooltip_reaction: String = ""
 	match reaction.type:
 		Reaction.ReactionType.EXPLOSION:
 			liquid.self_modulate = Color.TRANSPARENT
 			tube.texture = broken_mixer
+			tooltip_reaction = "Explosion"
 			explosion_particle.color = reaction.color
 			explosion_particle.emitting = true
 			audio_stream.stream = explosion_sounds[randi()%explosion_sounds.size()]
 		Reaction.ReactionType.CHANGECOLOR:
 			liquid.self_modulate = reaction.color
+			tooltip_reaction = "Change color"
 			reaction_particle.color = reaction.color
 			reaction_particle.emitting = true
 			audio_stream.stream = reaction_sounds[randi()%reaction_sounds.size()]
 		Reaction.ReactionType.SOLIDFALL:
 			solid.self_modulate = reaction.color
+			tooltip_reaction = "Precipitate"
 			reaction_particle.color = reaction.color
 			reaction_particle.emitting = true
 			audio_stream.stream = reaction_sounds[randi()%reaction_sounds.size()]
 	audio_stream.playing = true
-
+	tooltip.tooltip_text = "Reaction: " + tooltip_reaction + "\nColor: #" + str(reaction.color.to_html(false))
