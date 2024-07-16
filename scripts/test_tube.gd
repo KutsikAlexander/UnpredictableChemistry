@@ -7,6 +7,7 @@ extends Draggable
 var m: int = 0
 @onready var label: Label = $Label
 @onready var liquid: Sprite2D = $Liquid
+@onready var audio_stream: AudioStreamPlayer = $AudioStreamPlayer
 var buttons: Array[Button]
 
 signal value_changed
@@ -20,6 +21,7 @@ func _ready() -> void:
 			buttons.append(button)
 	hide_buttons()
 	picked_up.connect(hide_buttons)
+	picked_up.connect(play_sound)
 
 func set_properties(_n: int, _color: Color) -> void:
 	self.n = _n
@@ -47,3 +49,6 @@ func show_buttons() -> void:
 func hide_buttons() -> void:
 	for button in buttons:
 		button.visible = false
+
+func play_sound() -> void:
+	audio_stream.playing = true

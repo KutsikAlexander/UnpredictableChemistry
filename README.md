@@ -44,8 +44,13 @@ References:
 # Third party assets
 
 - [Maaack's GodotGame Template](https://github.com/Maaack/Godot-Game-Template/blob/main-gwj/README.md)
-- [?]()
-- [?]()
+
+## Sound effects
+
+- [Glass break](https://opengameart.org/content/glass-break)
+- [Mechanical explosion](https://opengameart.org/content/mechanical-explosion)
+- [Bubble sound effects](https://opengameart.org/content/bubble-sound-effects)
+- [Short water splashes](https://opengameart.org/content/6-short-water-splashes)
 
 # Author
 

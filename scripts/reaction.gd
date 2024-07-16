@@ -1,6 +1,6 @@
 class_name Reaction
 
-enum ReactionType {EXPLOSION, CHANGECOLOR, SOLIDFALL}
+enum ReactionType {CHANGECOLOR, SOLIDFALL, EXPLOSION}
 
 var ingredients: Array[int]
 var id: int = 0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://4ludglw3ur2h"]
+[gd_scene load_steps=25 format=3 uid="uid://4ludglw3ur2h"]
 
 [ext_resource type="Script" path="res://scripts/lab.gd" id="1_i7vdu"]
 [ext_resource type="Texture2D" uid="uid://drhj68c5oxcyp" path="res://sprites/mixer_stand.svg" id="2_mluja"]
@@ -8,12 +8,20 @@
 [ext_resource type="Texture2D" uid="uid://cove7u6vn3fe4" path="res://sprites/mixer_template.svg" id="4_opbko"]
 [ext_resource type="Script" path="res://scripts/mixer.gd" id="5_cernx"]
 [ext_resource type="PackedScene" uid="uid://beyddr53yy11b" path="res://scenes/list.tscn" id="5_qm1uf"]
+[ext_resource type="AudioStream" uid="uid://dqix4i3hjospu" path="res://sounds/ezwa-water_splash/water_splash-01.wav" id="6_bg3md"]
 [ext_resource type="Texture2D" uid="uid://v4pu6nbwah6b" path="res://sprites/sink.svg" id="6_t1uyr"]
 [ext_resource type="Script" path="res://scripts/sink.gd" id="6_w2agn"]
 [ext_resource type="Texture2D" uid="uid://bn8w1dnngpjus" path="res://sprites/solid_fall_template.svg" id="7_jeuyh"]
+[ext_resource type="AudioStream" uid="uid://ddnjlokjxv7sl" path="res://sounds/ezwa-water_splash/water_splash-02.wav" id="7_s7yio"]
 [ext_resource type="Texture2D" uid="uid://cv03g7kc1o8ro" path="res://sprites/bubble.svg" id="8_26sa1"]
+[ext_resource type="AudioStream" uid="uid://cbufwkn6c8a1n" path="res://sounds/ezwa-water_splash/water_splash-04.wav" id="8_jjidq"]
 [ext_resource type="PackedScene" uid="uid://kwyod5osd1ko" path="res://scenes/tube_stand.tscn" id="8_u07wo"]
+[ext_resource type="AudioStream" uid="uid://coxinpwcbq465" path="res://sounds/ezwa-water_splash/water_splash-05.wav" id="9_navw5"]
 [ext_resource type="Texture2D" uid="uid://cs2dypc2mrri5" path="res://sprites/explosion_particle.svg" id="10_gb5sl"]
+[ext_resource type="AudioStream" uid="uid://djg5nvgqa3u8b" path="res://sounds/bubbles-single1.wav" id="10_m5vms"]
+[ext_resource type="AudioStream" uid="uid://ysxuya8fuwdj" path="res://sounds/bubbles-single2.wav" id="11_t7qqt"]
+[ext_resource type="AudioStream" uid="uid://c60iknt3856ex" path="res://sounds/bubbles-single3.wav" id="12_5spkw"]
+[ext_resource type="AudioStream" uid="uid://b8vr3qsp2ebal" path="res://sounds/glass_breaking_and_explosion.wav" id="13_mu4bq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0b2dk"]
 size = Vector2(103, 134)
@@ -61,6 +69,9 @@ shape = SubResource("RectangleShape2D_0b2dk")
 
 [node name="Acceptor" type="Area2D" parent="Mixer"]
 script = ExtResource("5_cernx")
+water_sounds = Array[AudioStream]([ExtResource("6_bg3md"), ExtResource("7_s7yio"), ExtResource("8_jjidq"), ExtResource("9_navw5")])
+reaction_sounds = Array[AudioStream]([ExtResource("10_m5vms"), ExtResource("11_t7qqt"), ExtResource("12_5spkw")])
+explosion_sounds = Array[AudioStream]([ExtResource("13_mu4bq")])
 
 [node name="Liquid" type="Sprite2D" parent="Mixer/Acceptor"]
 scale = Vector2(0.148, 0.15)
@@ -113,6 +124,8 @@ initial_velocity_max = 650.0
 angular_velocity_max = 350.0
 scale_amount_min = 0.3
 scale_amount_max = 0.5
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Mixer/Acceptor"]
 
 [node name="Sink" type="Area2D" parent="."]
 position = Vector2(587, 542)
