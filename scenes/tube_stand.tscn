@@ -47,8 +47,8 @@ texture = ExtResource("1_l3xm2")
 region_enabled = true
 region_rect = Rect2(80, 808, 544, 408)
 
-[node name="RightHolder" type="Node2D" parent="." groups=["Holder"]]
+[node name="RightHolder" type="Marker2D" parent="." groups=["Holder"]]
 position = Vector2(-34, -10)
 
-[node name="LeftHolder" type="Node2D" parent="." groups=["Holder"]]
+[node name="LeftHolder" type="Marker2D" parent="." groups=["Holder"]]
 position = Vector2(37, -10)

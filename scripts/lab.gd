@@ -8,7 +8,7 @@ var testTubes: Array[TestTube]
 var tubeHolders: Array[Node2D]
 var reactions: Array[Reaction]
 var known_reaction: Array[Reaction]
-@onready var mixer:Mixer = $Mixer
+@onready var mixer:Mixer = $Mixer/Acceptor
 @onready var listUI:List = $CanvasLayer/List
 
 func _ready() -> void:
@@ -36,10 +36,17 @@ func _ready() -> void:
 
 	tubeHolders.shuffle()
 
+	# Generate color for tubes
+	var tubeColors: Array[Color] = []
+	for i in range(0, N):
+		tubeColors.append(Color.from_hsv((i*1.0)/N, 1.0, 1.0))
+
+	tubeColors.shuffle()
+
 	# Set test tubes
 	for i in range(0, N):
 		var testTube:TestTube = testTubePrefab.instantiate()
-		testTube.set_properties(i, Color.from_hsv((i*1.0)/N, 1.0, 1.0))
+		testTube.set_properties(i, tubeColors[i])
 		testTube.value_changed.connect(check)
 		testTubes.append(testTube)
 		tubeHolders[i].add_child(testTube)

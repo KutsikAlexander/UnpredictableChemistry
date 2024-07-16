@@ -7,6 +7,6 @@ extends Control
 @onready var result:ListItemComponent = $PanelContainer/HBoxContainer/ListItemComponent3
 
 func set_reaction(reaction: Reaction) -> void:
-	ingredient1.set_component_properties(str(reaction.ingredients[0]+1), Color.WHITE)
-	ingredient2.set_component_properties(str(reaction.ingredients[1]+1), Color.WHITE)
-	result.set_component_properties("", reaction.color)
+	ingredient1.set_component_properties(str(reaction.ingredients[0]+1), Color.WHITE, Reaction.ReactionType.CHANGECOLOR)
+	ingredient2.set_component_properties(str(reaction.ingredients[1]+1), Color.WHITE, Reaction.ReactionType.CHANGECOLOR)
+	result.set_component_properties("", reaction.color, reaction.type)
