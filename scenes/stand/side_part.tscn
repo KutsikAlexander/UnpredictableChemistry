@@ -1,29 +1,27 @@
 [gd_scene load_steps=2 format=3 uid="uid://kwyod5osd1ko"]
 
-[ext_resource type="Texture2D" uid="uid://bea26v7fk60kx" path="res://sprites/tube_frame_tilemap.svg" id="1_vs7qe"]
+[ext_resource type="Texture2D" uid="uid://bea26v7fk60kx" path="res://sprites/tube_frame_tilemap.svg" id="1_l3xm2"]
 
-[node name="MiddlePart" type="Node2D"]
+[node name="SidePart" type="Node2D"]
 
 [node name="Scaler" type="Node2D" parent="."]
 
 [node name="Top" type="Sprite2D" parent="Scaler"]
 position = Vector2(0, -444)
-texture = ExtResource("1_vs7qe")
+texture = ExtResource("1_l3xm2")
 region_enabled = true
-region_rect = Rect2(80, 0, 470, 304)
+region_rect = Rect2(0, 0, 80, 304)
 
 [node name="Middle" type="Sprite2D" parent="Scaler"]
 z_index = 1
 position = Vector2(0, -40)
-texture = ExtResource("1_vs7qe")
+texture = ExtResource("1_l3xm2")
 region_enabled = true
-region_rect = Rect2(80, 304, 470, 504)
+region_rect = Rect2(0, 304, 80, 504)
 
 [node name="Bottom" type="Sprite2D" parent="Scaler"]
 z_index = -1
 position = Vector2(0, 416)
-texture = ExtResource("1_vs7qe")
+texture = ExtResource("1_l3xm2")
 region_enabled = true
-region_rect = Rect2(80, 808, 470, 408)
-
-[node name="Holder" type="Marker2D" parent="." groups=["Holder"]]
+region_rect = Rect2(0, 808, 80, 408)

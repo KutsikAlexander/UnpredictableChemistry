@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://8luue1duh61h"]
+
+[ext_resource type="Script" path="res://scripts/stand_constructor.gd" id="1_arwc2"]
+
+[node name="StandConstructor" type="Node2D"]
+position = Vector2(316, 280)
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_arwc2")
+_sections = 3
