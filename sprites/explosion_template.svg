@@ -27,8 +27,8 @@
      inkscape:snap-object-midpoints="true"
      inkscape:snap-center="true"
      inkscape:zoom="0.52347032"
-     inkscape:cx="721.14882"
-     inkscape:cy="576.91905"
+     inkscape:cx="721.14881"
+     inkscape:cy="575.00872"
      inkscape:window-width="1920"
      inkscape:window-height="1011"
      inkscape:window-x="0"
@@ -44,7 +44,7 @@
     <g
        inkscape:label="Слой 1"
        id="layer1-7"
-       transform="rotate(-10.432841,652.28728,-315.55009)">
+       transform="rotate(-10.432841,268.12672,-350.62245)">
       <path
          style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.0730773;stroke-linecap:square;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          d="M 17.767613,24.682381 12.40543,18.644712 12.422,18.242576 c 0.03781,-0.917861 0.479642,-2.038513 1.123474,-2.849568 1.36593,-1.720702 4.048052,-2.682922 6.363453,-2.282912 3.40601,0.588426 6.093017,3.339101 6.930723,7.094944 0.583839,2.617641 0.07007,5.478798 -1.415136,7.880861 -0.485229,0.784769 -1.481835,1.97426 -2.020489,2.411536 L 23.1298,30.720051 Z"
@@ -70,7 +70,7 @@
     <g
        inkscape:label="Слой 1"
        id="g132948"
-       transform="rotate(61.311772,-21.207137,156.24648)">
+       transform="rotate(61.311772,37.965186,121.17412)">
       <path
          style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.0730773;stroke-linecap:square;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          d="M 17.767613,24.682381 12.40543,18.644712 12.422,18.242576 c 0.03781,-0.917861 0.479642,-2.038513 1.123474,-2.849568 1.36593,-1.720702 4.048052,-2.682922 6.363453,-2.282912 3.40601,0.588426 6.093017,3.339101 6.930723,7.094944 0.583839,2.617641 0.07007,5.478798 -1.415136,7.880861 -0.485229,0.784769 -1.481835,1.97426 -2.020489,2.411536 L 23.1298,30.720051 Z"
@@ -92,7 +92,7 @@
     <g
        inkscape:label="Слой 1"
        id="g132954"
-       transform="rotate(134.25414,46.208255,109.02063)">
+       transform="rotate(134.25414,61.003877,73.948269)">
       <path
          style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.0730773;stroke-linecap:square;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          d="M 17.767613,24.682381 12.40543,18.644712 12.422,18.242576 c 0.03781,-0.917861 0.479642,-2.038513 1.123474,-2.849568 1.36593,-1.720702 4.048052,-2.682922 6.363453,-2.282912 3.40601,0.588426 6.093017,3.339101 6.930723,7.094944 0.583839,2.617641 0.07007,5.478798 -1.415136,7.880861 -0.485229,0.784769 -1.481835,1.97426 -2.020489,2.411536 L 23.1298,30.720051 Z"
@@ -114,7 +114,7 @@
     <g
        inkscape:label="Слой 1"
        id="g132960"
-       transform="rotate(-160.76501,77.713674,86.950439)">
+       transform="rotate(-160.76501,71.770612,51.878078)">
       <path
          style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.0730773;stroke-linecap:square;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          d="M 17.767613,24.682381 12.40543,18.644712 12.422,18.242576 c 0.03781,-0.917861 0.479642,-2.038513 1.123474,-2.849568 1.36593,-1.720702 4.048052,-2.682922 6.363453,-2.282912 3.40601,0.588426 6.093017,3.339101 6.930723,7.094944 0.583839,2.617641 0.07007,5.478798 -1.415136,7.880861 -0.485229,0.784769 -1.481835,1.97426 -2.020489,2.411536 L 23.1298,30.720051 Z"
@@ -136,7 +136,7 @@
     <g
        inkscape:label="Слой 1"
        id="g132966"
-       transform="rotate(-88.750273,123.1408,55.127808)">
+       transform="rotate(-88.750273,87.294979,20.055447)">
       <path
          style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.0730773;stroke-linecap:square;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          d="M 17.767613,24.682381 12.40543,18.644712 12.422,18.242576 c 0.03781,-0.917861 0.479642,-2.038513 1.123474,-2.849568 1.36593,-1.720702 4.048052,-2.682922 6.363453,-2.282912 3.40601,0.588426 6.093017,3.339101 6.930723,7.094944 0.583839,2.617641 0.07007,5.478798 -1.415136,7.880861 -0.485229,0.784769 -1.481835,1.97426 -2.020489,2.411536 L 23.1298,30.720051 Z"

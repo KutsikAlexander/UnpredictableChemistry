@@ -4,7 +4,7 @@ extends Control
 
 @onready var button:Button = $Button
 @onready var listPanel: Control = $PanelContainer
-@onready var list:Control = $PanelContainer/ScrollContainer/VBoxContainer
+@onready var list:Control = $PanelContainer/MarginContainer/ScrollContainer/VBoxContainer
 var list_item_prefab:PackedScene = load("res://scenes/list_item.tscn")
 
 func set_reactions(reactions: Array[Reaction]) -> void:
