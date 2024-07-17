@@ -3,13 +3,16 @@ class_name Lab
 extends Node2D
 
 @export var N: int = 3
-var testTubePrefab: PackedScene = load("res://scenes/test_tube.tscn")
+var testTubeTemplate: PackedScene = load("res://scenes/test_tube.tscn")
 var testTubes: Array[TestTube]
+var tubeHolderTemplate: PackedScene = load("res://scenes/stand/stand_constructor.tscn")
 var tubeHolders: Array[Node2D]
+@export var tubeHolderFluctuation: Rect2
 var reactions: Array[Reaction]
 var known_reaction: Array[Reaction]
 @onready var mixer:Mixer = $Mixer/Acceptor
 @onready var listUI:List = $CanvasLayer/List
+@onready var hide_button: Button = $CanvasLayer/HideButton
 
 func _ready() -> void:
 	# Generate reaction matrix
@@ -28,11 +31,18 @@ func _ready() -> void:
 	for r:Reaction in known_reaction:
 		r.print()
 
-	# find all tube holders
-	for tubeHolder in find_children("*Holder*"):
-		if tubeHolder.is_in_group("Holder"):
-			tubeHolders.append(tubeHolder)
-			print(tubeHolder.position)
+	#find all stand points
+	for point in find_children("StandPoint*", "Marker2D"):
+		if point.is_in_group("StandPoint"):
+			var stand: StandConstructor = tubeHolderTemplate.instantiate()
+			point.add_child(stand)
+			stand.position.x = tubeHolderFluctuation.position.x+ randf_range(-tubeHolderFluctuation.size.x, tubeHolderFluctuation.size.x)
+			stand.position.y = tubeHolderFluctuation.position.y+ randf_range(-tubeHolderFluctuation.size.y, tubeHolderFluctuation.size.y)
+			stand.construct(3)
+			for child in stand.get_children():
+				for tubeHolder in child.find_children("*Holder*", "Marker2D"):
+					if tubeHolder.is_in_group("Holder"):
+						tubeHolders.append(tubeHolder)
 
 	tubeHolders.shuffle()
 
@@ -45,12 +55,14 @@ func _ready() -> void:
 
 	# Set test tubes
 	for i in range(0, N):
-		var testTube:TestTube = testTubePrefab.instantiate()
+		var testTube:TestTube = testTubeTemplate.instantiate()
 		testTube.set_properties(i, tubeColors[i], N)
 		testTube.value_changed.connect(check)
 		testTubes.append(testTube)
 		tubeHolders[i].add_child(testTube)
-		# testTube.position = to_global(.position)
+		testTube.global_scale = Vector2(1,1)
+		# testTube.position = to_global(tubeHolders[i].position)
+		# testTube.original_position = to_global(tubeHolders[i].position)
 
 	# setup mixer
 	mixer.reactions = reactions.duplicate()
@@ -70,3 +82,12 @@ func check() -> void:
 		if testTube.n != testTube.m-1:
 			return
 	print("You win")
+
+
+func hide_list() -> void:
+	if listUI.visible:
+		hide_button.text = "Show list"
+		listUI.visible = false
+	else:
+		hide_button.text = "Hide"
+		listUI.visible = true

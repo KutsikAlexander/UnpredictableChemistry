@@ -17,48 +17,37 @@ font_color = Color(0, 0, 0, 1)
 font_size = 50
 font_color = Color(0, 0, 0, 1)
 
-[node name="ListItem" type="Control"]
-custom_minimum_size = Vector2(0, 128)
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("1_v601v")
-
-[node name="PanelContainer" type="PanelContainer" parent="."]
-layout_mode = 0
+[node name="ListItem" type="PanelContainer"]
 offset_right = 36.0
 offset_bottom = 23.0
 theme_override_styles/panel = SubResource("StyleBoxEmpty_62v58")
+script = ExtResource("1_v601v")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 2
-size_flags_vertical = 4
 alignment = 1
 
-[node name="ListItemComponent1" parent="PanelContainer/HBoxContainer" instance=ExtResource("2_beth4")]
+[node name="ListItemComponent1" parent="HBoxContainer" instance=ExtResource("2_beth4")]
 layout_mode = 2
 
-[node name="PlusLabel" type="Label" parent="PanelContainer/HBoxContainer"]
+[node name="PlusLabel" type="Label" parent="HBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 11
-size_flags_vertical = 1
+size_flags_horizontal = 3
 text = "+"
 label_settings = SubResource("LabelSettings_v0x2n")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ListItemComponent2" parent="PanelContainer/HBoxContainer" instance=ExtResource("2_beth4")]
+[node name="ListItemComponent2" parent="HBoxContainer" instance=ExtResource("2_beth4")]
 layout_mode = 2
 
-[node name="EqualLabel" type="Label" parent="PanelContainer/HBoxContainer"]
+[node name="EqualLabel" type="Label" parent="HBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
 text = "="
 label_settings = SubResource("LabelSettings_avqdr")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ListItemComponent3" parent="PanelContainer/HBoxContainer" instance=ExtResource("2_beth4")]
+[node name="ListItemComponent3" parent="HBoxContainer" instance=ExtResource("2_beth4")]
 layout_mode = 2

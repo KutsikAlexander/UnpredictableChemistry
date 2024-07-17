@@ -6,9 +6,6 @@ extends Node2D
 @export var side_part: PackedScene = load("res://scenes/stand/side_part.tscn")
 @export var middle_part: PackedScene = load("res://scenes/stand/middle_part.tscn")
 
-func _ready() -> void:
-    construct(_sections)
-
 func construct(sections: int) -> void:
     var left_side: Node2D = side_part.instantiate()
     add_child(left_side)

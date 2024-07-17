@@ -2,9 +2,9 @@ class_name ListItem
 
 extends Control
 
-@onready var ingredient1:ListItemComponent = $PanelContainer/HBoxContainer/ListItemComponent1
-@onready var ingredient2:ListItemComponent = $PanelContainer/HBoxContainer/ListItemComponent2
-@onready var result:ListItemComponent = $PanelContainer/HBoxContainer/ListItemComponent3
+@onready var ingredient1:ListItemComponent = $HBoxContainer/ListItemComponent1
+@onready var ingredient2:ListItemComponent = $HBoxContainer/ListItemComponent2
+@onready var result:ListItemComponent = $HBoxContainer/ListItemComponent3
 
 func set_reaction(reaction: Reaction) -> void:
 	ingredient1.set_component_properties(str(reaction.ingredients[0]+1), Color.WHITE, Reaction.ReactionType.CHANGECOLOR)

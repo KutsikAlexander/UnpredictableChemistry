@@ -27,3 +27,4 @@ region_enabled = true
 region_rect = Rect2(80, 808, 470, 408)
 
 [node name="Holder" type="Marker2D" parent="." groups=["Holder"]]
+position = Vector2(10, -50)

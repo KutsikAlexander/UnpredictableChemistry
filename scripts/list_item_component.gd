@@ -2,10 +2,9 @@ class_name ListItemComponent
 
 extends Control
 
-@onready var panel: PanelContainer = $PanelContainer
-@onready var label: Label = $PanelContainer/Label
-@onready var liquid: TextureRect = $PanelContainer/Liquid
-@onready var tube: TextureRect = $PanelContainer/Tube
+@onready var label: Label = $Label
+@onready var liquid: TextureRect = $Liquid
+@onready var tube: TextureRect = $Tube
 
 @export var empty_tube: Texture2D = load("res://sprites/empty_test_tube.svg")
 @export var empty_mixer: Texture2D = load("res://sprites/mixer_template.svg")
@@ -32,4 +31,4 @@ func set_component_properties(text: String, color: Color, type: Reaction.Reactio
 				liquid.texture = solid_fall
 				tube.texture = empty_mixer
 				tooltip_reaction = "Precipitate"
-		panel.tooltip_text = "Reaction: " + tooltip_reaction + "\nColor: #" + str(color.to_html(false))
+		tooltip_text = "Reaction: " + tooltip_reaction + "\nColor: #" + str(color.to_html(false))

@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://4ludglw3ur2h"]
+[gd_scene load_steps=28 format=3 uid="uid://4ludglw3ur2h"]
 
 [ext_resource type="Script" path="res://scripts/lab.gd" id="1_i7vdu"]
 [ext_resource type="Texture2D" uid="uid://drhj68c5oxcyp" path="res://sprites/mixer_stand.svg" id="2_mluja"]
@@ -19,7 +19,6 @@
 [ext_resource type="AudioStream" uid="uid://ddnjlokjxv7sl" path="res://sounds/ezwa-water_splash/water_splash-02.wav" id="7_s7yio"]
 [ext_resource type="Texture2D" uid="uid://cv03g7kc1o8ro" path="res://sprites/bubble.svg" id="8_26sa1"]
 [ext_resource type="AudioStream" uid="uid://cbufwkn6c8a1n" path="res://sounds/ezwa-water_splash/water_splash-04.wav" id="8_jjidq"]
-[ext_resource type="PackedScene" uid="uid://kwyod5osd1ko" path="res://scenes/tube_stand.tscn" id="8_u07wo"]
 [ext_resource type="AudioStream" uid="uid://coxinpwcbq465" path="res://sounds/ezwa-water_splash/water_splash-05.wav" id="9_navw5"]
 [ext_resource type="Texture2D" uid="uid://cs2dypc2mrri5" path="res://sprites/explosion_particle.svg" id="10_gb5sl"]
 [ext_resource type="AudioStream" uid="uid://djg5nvgqa3u8b" path="res://sounds/bubbles-single1.wav" id="10_m5vms"]
@@ -36,11 +35,12 @@ size = Vector2(150, 55)
 [node name="Lab" type="Node2D"]
 script = ExtResource("1_i7vdu")
 N = 4
+tubeHolderFluctuation = Rect2(0, 0, 10, 10)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="List" parent="CanvasLayer" instance=ExtResource("5_qm1uf")]
-visible = false
+mouse_filter = 2
 
 [node name="NextLevelButton" type="Button" parent="CanvasLayer"]
 anchors_preset = 1
@@ -59,6 +59,17 @@ offset_top = 30.0
 offset_right = 150.0
 offset_bottom = 89.0
 text = "Menu"
+
+[node name="HideButton" type="Button" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -65.0
+offset_top = 30.0
+offset_right = 65.0
+offset_bottom = 89.0
+grow_horizontal = 2
+text = "Hide"
 
 [node name="Decor" type="Node2D" parent="."]
 z_index = -1
@@ -188,14 +199,16 @@ texture = ExtResource("6_t1uyr")
 position = Vector2(0, 62.5)
 shape = SubResource("RectangleShape2D_3ekam")
 
-[node name="Stand1" parent="." instance=ExtResource("8_u07wo")]
-position = Vector2(232, 205)
+[node name="StandPoint1" type="Marker2D" parent="." groups=["StandPoint"]]
+position = Vector2(105, 228)
 
-[node name="Stand2" parent="." instance=ExtResource("8_u07wo")]
-position = Vector2(948, 196)
+[node name="StandPoint2" type="Marker2D" parent="." groups=["StandPoint"]]
+position = Vector2(115, 507)
 
-[node name="Stand3" parent="." instance=ExtResource("8_u07wo")]
-position = Vector2(221, 482)
+[node name="StandPoint3" type="Marker2D" parent="." groups=["StandPoint"]]
+position = Vector2(797, 228)
 
-[node name="Stand4" parent="." instance=ExtResource("8_u07wo")]
-position = Vector2(938, 479)
+[node name="StandPoint4" type="Marker2D" parent="." groups=["StandPoint"]]
+position = Vector2(807, 507)
+
+[connection signal="pressed" from="CanvasLayer/HideButton" to="." method="hide_list"]

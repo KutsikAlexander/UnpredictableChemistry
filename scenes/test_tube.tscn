@@ -15,7 +15,7 @@ font_size = 50
 font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hxwrk"]
-size = Vector2(72, 300)
+size = Vector2(72, 244)
 
 [node name="TestTube" type="Area2D"]
 script = ExtResource("1_xqyuu")
@@ -41,9 +41,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -16.0
-offset_top = -128.0
+offset_top = -109.0
 offset_right = 16.0
-offset_bottom = -96.0
+offset_bottom = -77.0
 grow_horizontal = 2
 grow_vertical = 0
 focus_neighbor_bottom = NodePath("../DownButton")
@@ -54,9 +54,9 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -16.0
-offset_top = 100.0
+offset_top = 90.0
 offset_right = 16.0
-offset_bottom = 132.0
+offset_bottom = 122.0
 grow_horizontal = 2
 focus_neighbor_top = NodePath("../UpButton")
 text = "-"
@@ -76,7 +76,7 @@ vertical_alignment = 1
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-1, -1.5)
+position = Vector2(-1, 5)
 shape = SubResource("RectangleShape2D_hxwrk")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

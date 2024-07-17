@@ -1,8 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://bk1m1y62ce6gv"]
+[gd_scene load_steps=11 format=3 uid="uid://bk1m1y62ce6gv"]
 
 [ext_resource type="Script" path="res://scripts/list_item_component.gd" id="1_oitgk"]
 [ext_resource type="Texture2D" uid="uid://f1rxngcl0wla" path="res://sprites/liquid_template.svg" id="2_erlyv"]
 [ext_resource type="Texture2D" uid="uid://w827eama20k7" path="res://sprites/empty_test_tube.svg" id="3_h6uwb"]
+[ext_resource type="Texture2D" uid="uid://cove7u6vn3fe4" path="res://sprites/mixer_template.svg" id="3_ya43q"]
+[ext_resource type="Texture2D" uid="uid://depscabehuokm" path="res://sprites/broken_mixer.svg" id="4_ixaxn"]
+[ext_resource type="Texture2D" uid="uid://clff1tr4nmyvg" path="res://sprites/mixer_liquid_template.svg" id="5_hhdv0"]
+[ext_resource type="Texture2D" uid="uid://bn8w1dnngpjus" path="res://sprites/solid_fall_template.svg" id="6_xb6pd"]
+[ext_resource type="Texture2D" uid="uid://uejtl2ahqnw1" path="res://sprites/explosion_template.svg" id="7_w6uqx"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dgoxd"]
 
@@ -10,9 +15,7 @@
 font_size = 50
 font_color = Color(0, 0, 0, 1)
 
-[node name="ListItemComponent" type="Control"]
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 3
+[node name="ListItemComponent" type="PanelContainer"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -26,36 +29,28 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-script = ExtResource("1_oitgk")
-
-[node name="PanelContainer" type="PanelContainer" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -64.0
-offset_top = -64.0
-offset_right = 64.0
-offset_bottom = 64.0
-grow_horizontal = 2
-grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_dgoxd")
+script = ExtResource("1_oitgk")
+empty_tube = ExtResource("3_h6uwb")
+empty_mixer = ExtResource("3_ya43q")
+broken_mixer = ExtResource("4_ixaxn")
+mixer_liquid = ExtResource("5_hhdv0")
+solid_fall = ExtResource("6_xb6pd")
+explosion = ExtResource("7_w6uqx")
 
-[node name="Liquid" type="TextureRect" parent="PanelContainer"]
+[node name="Liquid" type="TextureRect" parent="."]
 layout_mode = 2
 texture = ExtResource("2_erlyv")
-expand_mode = 3
+expand_mode = 4
 stretch_mode = 5
 
-[node name="Tube" type="TextureRect" parent="PanelContainer"]
+[node name="Tube" type="TextureRect" parent="."]
 layout_mode = 2
 texture = ExtResource("3_h6uwb")
-expand_mode = 3
+expand_mode = 5
 stretch_mode = 5
 
-[node name="Label" type="Label" parent="PanelContainer"]
+[node name="Label" type="Label" parent="."]
 layout_mode = 2
 size_flags_horizontal = 4
 text = "?"
