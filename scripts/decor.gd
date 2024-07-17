@@ -5,13 +5,15 @@ extends Node2D
 @export var zone: Rect2
 @export var paper_size: Vector2
 
+var paper_template: PackedScene = load("res://scenes/paper.tscn")
+
 func _ready() -> void:
     for i in range(0, papers):
-        var sprite2d = Sprite2D.new()
-        sprite2d.texture = textures[randi()%textures.size()]
-        add_child(sprite2d)
-        sprite2d.position.x = randf_range(zone.position.x, zone.position.x+zone.size.x)
-        sprite2d.position.y = randf_range(zone.position.y, zone.position.y+zone.size.y)
-        sprite2d.scale = paper_size
-        sprite2d.rotate(randf_range(0, 2*PI))
-        sprite2d.z_index = -1
+        var paper: Paper = paper_template.instantiate()
+        add_child(paper)
+        paper.sprite2d.texture = textures[randi()%textures.size()]
+        paper.original_position.x = randf_range(zone.position.x, zone.position.x+zone.size.x)
+        paper.original_position.y = randf_range(zone.position.y, zone.position.y+zone.size.y)
+        paper.position = paper.original_position
+        paper.scale = paper_size
+        paper.rotate(randf_range(0, 2*PI))

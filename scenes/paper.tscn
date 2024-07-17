@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://c8monulqpvkaf"]
+
+[ext_resource type="Script" path="res://scripts/paper.gd" id="1_m4qvy"]
+[ext_resource type="Texture2D" uid="uid://7nfjgwspcp3p" path="res://sprites/paper1.svg" id="2_q36cb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gicit"]
+size = Vector2(796, 1127)
+
+[node name="Paper" type="Area2D"]
+script = ExtResource("1_m4qvy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, 1.5)
+shape = SubResource("RectangleShape2D_gicit")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_q36cb")

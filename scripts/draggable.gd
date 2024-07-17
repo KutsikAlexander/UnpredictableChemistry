@@ -7,6 +7,7 @@ var is_intercept: bool = false
 var dragged: bool = false
 var original_position: Vector2
 var mouse_position: Vector2
+var original_z_index: int
 
 signal picked_up
 signal drop
@@ -15,6 +16,7 @@ func _ready() -> void:
 	mouse_entered.connect(on_mouse_enter)
 	mouse_exited.connect(on_mouse_exit)
 	original_position = position
+	original_z_index = z_index
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
@@ -26,11 +28,11 @@ func _input(event: InputEvent) -> void:
 		if dragged:
 			picked_up.emit()
 			global_position = mouse_position
-			z_index=2
+			z_index=10
 		else:
 			drop.emit()
 			position = original_position
-			z_index=0
+			z_index=original_z_index
 
 	if event is InputEventMouseMotion:
 		mouse_position = to_global(to_local(event.position))
