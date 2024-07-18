@@ -29,7 +29,7 @@ Key features:
 - - [x] Change color
 - - [x] Solid fall
 - [ ] Menu
-- [ ] Next level button
+- [x] Next level button
 
 Additional features
 - [ ] Tutorial
@@ -42,9 +42,6 @@ References:
 - ?
 
 # Third party assets
-
-- [Maaack's GodotGame Template](https://github.com/Maaack/Godot-Game-Template/blob/main-gwj/README.md)
-
 ## Sound effects
 
 - [Glass break](https://opengameart.org/content/glass-break)

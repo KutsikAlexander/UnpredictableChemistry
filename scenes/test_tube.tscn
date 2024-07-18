@@ -81,6 +81,7 @@ shape = SubResource("RectangleShape2D_hxwrk")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_y4b74")
+bus = &"SFX"
 
 [connection signal="pressed" from="UpButton" to="." method="increase_value"]
 [connection signal="pressed" from="DownButton" to="." method="decrease_value"]

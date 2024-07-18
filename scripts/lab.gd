@@ -2,7 +2,7 @@ class_name Lab
 
 extends Node2D
 
-@export var N: int = 3
+static var N: int = 3
 var testTubeTemplate: PackedScene = load("res://scenes/test_tube.tscn")
 var testTubes: Array[TestTube]
 var tubeHolderTemplate: PackedScene = load("res://scenes/stand/stand_constructor.tscn")
@@ -12,7 +12,9 @@ var reactions: Array[Reaction]
 var known_reaction: Array[Reaction]
 @onready var mixer:Mixer = $Mixer/Acceptor
 @onready var listUI:List = $CanvasLayer/List
+
 @onready var hide_button: Button = $CanvasLayer/HideButton
+@onready var next_level_button: Button = $CanvasLayer/NextLevelButton
 
 func _ready() -> void:
 	# Generate reaction matrix
@@ -80,8 +82,9 @@ func generate_reaction_list() -> Array[Reaction]:
 func check() -> void:
 	for testTube in testTubes:
 		if testTube.n != testTube.m-1:
+			next_level_button.disabled = true
 			return
-	print("You win")
+	next_level_button.disabled = false
 
 
 func hide_list() -> void:
@@ -91,3 +94,10 @@ func hide_list() -> void:
 	else:
 		hide_button.text = "Hide"
 		listUI.visible = true
+
+func next_level() -> void:
+	N+=1
+	get_tree().reload_current_scene()
+
+func go_to_main_menu() -> void:
+	get_tree().change_scene_to_file("res://scenes/menu/main_menu.tscn")

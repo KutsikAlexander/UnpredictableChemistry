@@ -11,18 +11,11 @@ config_version=5
 [application]
 
 config/name="Godot-wild-jam-71"
-run/main_scene="res://addons/maaacks_game_template/base/scenes/Menus/MainMenu/MainMenu.tscn"
+run/main_scene="res://scenes/menu/main_menu.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 boot_splash/bg_color=Color(0.0784314, 0.133333, 0.25098, 1)
 boot_splash/image="res://GWJ-Full-Logo-tag-4k.png"
 config/icon="res://icon.svg"
-
-[autoload]
-
-AppConfig="*res://addons/maaacks_game_template/base/scenes/Autoloads/AppConfig.tscn"
-SceneLoader="*res://addons/maaacks_game_template/base/scenes/Autoloads/SceneLoader.tscn"
-ProjectMusicController="*res://addons/maaacks_game_template/base/scenes/Autoloads/ProjectMusicController.tscn"
-ProjectUISoundController="*res://addons/maaacks_game_template/base/scenes/Autoloads/ProjectUISoundController.tscn"
 
 [display]
 

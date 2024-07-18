@@ -34,7 +34,6 @@ size = Vector2(150, 55)
 
 [node name="Lab" type="Node2D"]
 script = ExtResource("1_i7vdu")
-N = 4
 tubeHolderFluctuation = Rect2(0, 0, 10, 10)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -51,8 +50,10 @@ offset_top = 30.0
 offset_right = -41.0
 offset_bottom = 98.0
 grow_horizontal = 0
+tooltip_text = "Gues which numbers assosiated with all test tubes to complite level"
 focus_neighbor_left = NodePath("../HideButton")
 focus_neighbor_right = NodePath("../MenuButton")
+disabled = true
 text = "Next level"
 
 [node name="MenuButton" type="Button" parent="CanvasLayer"]
@@ -175,6 +176,7 @@ scale_amount_min = 0.3
 scale_amount_max = 0.5
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Mixer/Acceptor"]
+bus = &"SFX"
 
 [node name="Sink" type="Area2D" parent="."]
 position = Vector2(587, 542)
@@ -218,4 +220,6 @@ position = Vector2(797, 228)
 [node name="StandPoint4" type="Marker2D" parent="." groups=["StandPoint"]]
 position = Vector2(807, 507)
 
+[connection signal="pressed" from="CanvasLayer/NextLevelButton" to="." method="next_level"]
+[connection signal="pressed" from="CanvasLayer/MenuButton" to="." method="go_to_main_menu"]
 [connection signal="pressed" from="CanvasLayer/HideButton" to="." method="hide_list"]
