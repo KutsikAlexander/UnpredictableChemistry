@@ -1,0 +1,10 @@
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://cdf2gde8xnf5y"]
+
+[ext_resource type="Texture2D" uid="uid://20ug3vdq5equ" path="res://sprites/list.svg" id="1_gqdro"]
+
+[resource]
+texture = ExtResource("1_gqdro")
+expand_margin_left = 90.0
+expand_margin_top = 150.0
+expand_margin_right = 90.0
+expand_margin_bottom = 75.0

@@ -18,7 +18,7 @@ func _on_check_button_toggled(toggled_on:bool) -> void:
 		get_window().mode = Window.MODE_WINDOWED
 
 func _on_h_slider_value_changed(value:float) -> void:
-	pass # Replace with function body.
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("SFX"), value - 80)
 
 
 func _on_option_button_item_selected(index:int) -> void:

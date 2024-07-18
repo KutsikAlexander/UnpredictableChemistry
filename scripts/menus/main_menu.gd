@@ -1,4 +1,4 @@
-extends CanvasLayer
+extends Control
 
 @onready var main_menu_panel = $MainPanelContainer
 @onready var options_panel = $OptionsPanelContainer
@@ -26,7 +26,7 @@ func show_credits() -> void:
 func show_select_level() -> void:
 	main_menu_panel.visible = false
 	select_level_panel.visible = true
-	back_button.visible = true 
+	back_button.visible = true
 
 func exit_games() -> void:
-	pass
+	get_tree().quit()

@@ -11,7 +11,9 @@ var tubeHolders: Array[Node2D]
 var reactions: Array[Reaction]
 var known_reaction: Array[Reaction]
 @onready var mixer:Mixer = $Mixer/Acceptor
+
 @onready var listUI:List = $CanvasLayer/List
+@onready var menu:Control = $CanvasLayer/MainMenu
 
 @onready var hide_button: Button = $CanvasLayer/HideButton
 @onready var next_level_button: Button = $CanvasLayer/NextLevelButton
@@ -94,10 +96,16 @@ func hide_list() -> void:
 	else:
 		hide_button.text = "Hide"
 		listUI.visible = true
+		menu.visible = false
 
 func next_level() -> void:
 	N+=1
 	get_tree().reload_current_scene()
 
 func go_to_main_menu() -> void:
-	get_tree().change_scene_to_file("res://scenes/menu/main_menu.tscn")
+	if menu.visible:
+		menu.visible = false
+	else:
+		menu.visible = true
+		listUI.visible = false
+		hide_button.text = "Show list"

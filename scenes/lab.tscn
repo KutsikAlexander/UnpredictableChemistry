@@ -1,9 +1,10 @@
-[gd_scene load_steps=28 format=3 uid="uid://4ludglw3ur2h"]
+[gd_scene load_steps=29 format=3 uid="uid://4ludglw3ur2h"]
 
 [ext_resource type="Script" path="res://scripts/lab.gd" id="1_i7vdu"]
 [ext_resource type="Texture2D" uid="uid://drhj68c5oxcyp" path="res://sprites/mixer_stand.svg" id="2_mluja"]
 [ext_resource type="Texture2D" uid="uid://clff1tr4nmyvg" path="res://sprites/mixer_liquid_template.svg" id="3_gmhi4"]
 [ext_resource type="Script" path="res://scripts/decor.gd" id="3_v5sn2"]
+[ext_resource type="PackedScene" uid="uid://ct6e7a3qoefsm" path="res://scenes/menu/menu.tscn" id="3_y8dqm"]
 [ext_resource type="Script" path="res://scripts/draggable.gd" id="4_d6xdr"]
 [ext_resource type="Texture2D" uid="uid://7nfjgwspcp3p" path="res://sprites/paper1.svg" id="4_idwyr"]
 [ext_resource type="Texture2D" uid="uid://cove7u6vn3fe4" path="res://sprites/mixer_template.svg" id="4_opbko"]
@@ -77,6 +78,10 @@ grow_horizontal = 2
 focus_neighbor_left = NodePath("../MenuButton")
 focus_neighbor_right = NodePath("../NextLevelButton")
 text = "Hide"
+
+[node name="MainMenu" parent="CanvasLayer" instance=ExtResource("3_y8dqm")]
+visible = false
+mouse_filter = 2
 
 [node name="Decor" type="Node2D" parent="."]
 z_index = -1
