@@ -43,7 +43,6 @@ tubeHolderFluctuation = Rect2(0, 0, 10, 10)
 
 [node name="List" parent="CanvasLayer" instance=ExtResource("5_qm1uf")]
 visible = false
-mouse_filter = 2
 
 [node name="NextLevelButton" type="Button" parent="CanvasLayer"]
 anchors_preset = 1
@@ -130,7 +129,7 @@ centered = false
 [node name="Decor" type="Node2D" parent="."]
 z_index = -1
 script = ExtResource("3_v5sn2")
-papers = 5
+papers = 6
 textures = Array[Texture2D]([ExtResource("4_idwyr"), ExtResource("5_6p25s"), ExtResource("6_wceu5"), ExtResource("7_q0sod")])
 zone = Rect2(0, 0, 1000, 500)
 paper_size = Vector2(0.15, 0.15)

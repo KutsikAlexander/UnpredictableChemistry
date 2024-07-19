@@ -16,10 +16,10 @@ var clicks: int = 0
 @onready var explosion_particle = $Explosion
 
 # Textures
-@export var empty_mixer: Texture2D = load("res://sprites/mixer_template.svg")
-@export var broken_mixer: Texture2D = load("res://sprites/broken_mixer.svg")
-@export var mixer_liquid: Texture2D = load("res://sprites/mixer_liquid_template.svg")
-@export var solid_fall: Texture2D = load("res://sprites/solid_fall_template.svg")
+@onready var empty_mixer: Texture2D = load("res://sprites/mixer_template.svg")
+@onready var broken_mixer: Texture2D = load("res://sprites/broken_mixer.svg")
+@onready var mixer_liquid: Texture2D = load("res://sprites/mixer_liquid_template.svg")
+@onready var solid_fall: Texture2D = load("res://sprites/solid_fall_template.svg")
 
 # Sounds
 @onready var audio_stream: AudioStreamPlayer = $AudioStreamPlayer
@@ -38,7 +38,6 @@ func _on_drop() -> void:
 		mix(draggable.n, draggable.color)
 
 func mix(number: int, color: Color) -> void:
-	print(number)
 	if clicks == 0:
 		liquid.self_modulate = color
 		tooltip.tooltip_text = "Color: #" + str(color.to_html(false))
@@ -51,16 +50,10 @@ func mix(number: int, color: Color) -> void:
 			ingredients.push_back(number)
 			ingredients.sort()
 			clicks+=1
-			print("Reaction")
 			for r in reactions:
 				if r.ingredients == ingredients:
 					show_reaction(r)
-					r.print()
 					break
-		else:
-			print("Already there")
-	else:
-		print("Full")
 
 func check_reaction() -> void:
 	pass

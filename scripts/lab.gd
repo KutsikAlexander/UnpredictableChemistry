@@ -21,20 +21,13 @@ var known_reaction: Array[Reaction]
 
 func _ready() -> void:
 	# Generate reaction matrix
+	var id: int = 0
 	for i:int in range(0, N):
 		for j:int in range(i+1, N):
-			var id: int = i*(N-1)+j
-			reactions.append(Reaction.new([i,j],id, Color.from_hsv((id*1.0)/N/(N-1)/2.0, 1.0, 1.0)))
-
-	# print("All reactions:")
-	# print(reactions.size())
-	# for r:Reaction in reactions:
-	# 	r.print()
+			reactions.append(Reaction.new([i,j],id, Color.from_hsv((id*1.0+0.5)/N/(N-1)*2.0, 1.0, 1.0)))
+			id += 1
 
 	known_reaction = generate_reaction_list()
-	# print("List:")
-	# for r:Reaction in known_reaction:
-	# 	r.print()
 
 	#find all stand points
 	for point in find_children("StandPoint*", "Marker2D"):
@@ -66,8 +59,6 @@ func _ready() -> void:
 		testTubes.append(testTube)
 		tubeHolders[i].add_child(testTube)
 		testTube.global_scale = Vector2(1,1)
-		# testTube.position = to_global(tubeHolders[i].position)
-		# testTube.original_position = to_global(tubeHolders[i].position)
 
 	# setup mixer
 	mixer.reactions = reactions.duplicate()
