@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://4ludglw3ur2h"]
+[gd_scene load_steps=31 format=3 uid="uid://4ludglw3ur2h"]
 
 [ext_resource type="Script" path="res://scripts/lab.gd" id="1_i7vdu"]
 [ext_resource type="Texture2D" uid="uid://drhj68c5oxcyp" path="res://sprites/mixer_stand.svg" id="2_mluja"]
@@ -7,7 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://ct6e7a3qoefsm" path="res://scenes/menu/menu.tscn" id="3_y8dqm"]
 [ext_resource type="Script" path="res://scripts/draggable.gd" id="4_d6xdr"]
 [ext_resource type="Texture2D" uid="uid://7nfjgwspcp3p" path="res://sprites/paper1.svg" id="4_idwyr"]
+[ext_resource type="StyleBox" uid="uid://cdf2gde8xnf5y" path="res://themes/list.tres" id="4_lpf8a"]
 [ext_resource type="Texture2D" uid="uid://cove7u6vn3fe4" path="res://sprites/mixer_template.svg" id="4_opbko"]
+[ext_resource type="Texture2D" uid="uid://kcbiepkw7545" path="res://sprites/table.svg" id="5_6cls7"]
 [ext_resource type="Texture2D" uid="uid://cftbhd16sns58" path="res://sprites/paper2.svg" id="5_6p25s"]
 [ext_resource type="Script" path="res://scripts/mixer.gd" id="5_cernx"]
 [ext_resource type="PackedScene" uid="uid://beyddr53yy11b" path="res://scenes/list.tscn" id="5_qm1uf"]
@@ -40,6 +42,7 @@ tubeHolderFluctuation = Rect2(0, 0, 10, 10)
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="List" parent="CanvasLayer" instance=ExtResource("5_qm1uf")]
+visible = false
 mouse_filter = 2
 
 [node name="NextLevelButton" type="Button" parent="CanvasLayer"]
@@ -51,7 +54,7 @@ offset_top = 30.0
 offset_right = -41.0
 offset_bottom = 98.0
 grow_horizontal = 0
-tooltip_text = "Gues which numbers assosiated with all test tubes to complite level"
+tooltip_text = "Guess which numbers assosiated with all test tubes to complite level"
 focus_neighbor_left = NodePath("../HideButton")
 focus_neighbor_right = NodePath("../MenuButton")
 disabled = true
@@ -77,11 +80,52 @@ offset_bottom = 89.0
 grow_horizontal = 2
 focus_neighbor_left = NodePath("../MenuButton")
 focus_neighbor_right = NodePath("../NextLevelButton")
-text = "Hide"
+text = "Show notes"
 
 [node name="MainMenu" parent="CanvasLayer" instance=ExtResource("3_y8dqm")]
 visible = false
 mouse_filter = 2
+
+[node name="Tutorial" type="PanelContainer" parent="CanvasLayer"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -136.0
+offset_top = -106.0
+offset_right = 154.0
+offset_bottom = 180.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("4_lpf8a")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Tutorial"]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Tutorial/VBoxContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_vertical = 3
+bbcode_enabled = true
+text = "I am so happy you are here! Please help me! Someone erased all labels from the test tubes and now I don't know what is in them. The only hint is my notes. But this is not enough. You have to combine the chemicals in every possible ways to be 100% sure what are they. Be careful! Some reactions are very [b]unpredictable[/b]!
+
+Combine two chemicals in the mixer to see unique reaction. To empty the mixer move it to the sink at the bottom of a screen. Change the test tube number with the \"+\" and \"-\" buttons. The level is complete if all your guesses are correct.
+
+Good luck!"
+
+[node name="OkButton" type="Button" parent="CanvasLayer/Tutorial/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+text = "Ok"
+
+[node name="Table" type="Sprite2D" parent="."]
+z_index = -100
+scale = Vector2(0.6, 0.603704)
+texture = ExtResource("5_6cls7")
+centered = false
 
 [node name="Decor" type="Node2D" parent="."]
 z_index = -1
@@ -225,6 +269,10 @@ position = Vector2(797, 228)
 [node name="StandPoint4" type="Marker2D" parent="." groups=["StandPoint"]]
 position = Vector2(807, 507)
 
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+
 [connection signal="pressed" from="CanvasLayer/NextLevelButton" to="." method="next_level"]
 [connection signal="pressed" from="CanvasLayer/MenuButton" to="." method="go_to_main_menu"]
 [connection signal="pressed" from="CanvasLayer/HideButton" to="." method="hide_list"]
+[connection signal="pressed" from="CanvasLayer/Tutorial/VBoxContainer/OkButton" to="." method="hide_tutorial"]

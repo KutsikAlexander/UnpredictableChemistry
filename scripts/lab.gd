@@ -14,6 +14,7 @@ var known_reaction: Array[Reaction]
 
 @onready var listUI:List = $CanvasLayer/List
 @onready var menu:Control = $CanvasLayer/MainMenu
+@onready var tutorial: PanelContainer = $CanvasLayer/Tutorial
 
 @onready var hide_button: Button = $CanvasLayer/HideButton
 @onready var next_level_button: Button = $CanvasLayer/NextLevelButton
@@ -25,15 +26,15 @@ func _ready() -> void:
 			var id: int = i*(N-1)+j
 			reactions.append(Reaction.new([i,j],id, Color.from_hsv((id*1.0)/N/(N-1)/2.0, 1.0, 1.0)))
 
-	print("All reactions:")
-	print(reactions.size())
-	for r:Reaction in reactions:
-		r.print()
+	# print("All reactions:")
+	# print(reactions.size())
+	# for r:Reaction in reactions:
+	# 	r.print()
 
 	known_reaction = generate_reaction_list()
-	print("List:")
-	for r:Reaction in known_reaction:
-		r.print()
+	# print("List:")
+	# for r:Reaction in known_reaction:
+	# 	r.print()
 
 	#find all stand points
 	for point in find_children("StandPoint*", "Marker2D"):
@@ -74,6 +75,9 @@ func _ready() -> void:
 	#setup UI List
 	listUI.set_reactions(known_reaction)
 
+	if N == 3:
+		tutorial.visible = true
+
 func generate_reaction_list() -> Array[Reaction]:
 	var matrix = reactions.duplicate(true)
 	var list: Array[Reaction] = []
@@ -91,16 +95,23 @@ func check() -> void:
 
 func hide_list() -> void:
 	if listUI.visible:
-		hide_button.text = "Show list"
+		hide_button.text = "Show notes"
 		listUI.visible = false
 	else:
-		hide_button.text = "Hide"
+		hide_button.text = "Hide notes"
 		listUI.visible = true
 		menu.visible = false
+		tutorial.visible = false
+
+func hide_tutorial() -> void:
+	tutorial.visible = false
 
 func next_level() -> void:
 	N+=1
-	get_tree().reload_current_scene()
+	if N < 12:
+		get_tree().reload_current_scene()
+	else:
+		get_tree().change_scene_to_file("res://scenes/menu/last_screen.tscn")
 
 func go_to_main_menu() -> void:
 	if menu.visible:
@@ -108,4 +119,5 @@ func go_to_main_menu() -> void:
 	else:
 		menu.visible = true
 		listUI.visible = false
-		hide_button.text = "Show list"
+		hide_button.text = "Show notes"
+		tutorial.visible = false

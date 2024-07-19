@@ -10,21 +10,31 @@ config_version=5
 
 [application]
 
-config/name="Godot-wild-jam-71"
+config/name="Unpredictable Chemistry"
+config/version="0.1.0"
 run/main_scene="res://scenes/menu/main_menu.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 boot_splash/bg_color=Color(0.0784314, 0.133333, 0.25098, 1)
 boot_splash/image="res://GWJ-Full-Logo-tag-4k.png"
 config/icon="res://icon.svg"
 
+[autoload]
+
+BackgroundMusic="*res://scenes/menu/background_music.tscn"
+
 [display]
 
+window/size/resizable=false
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/maaacks_game_template/plugin.cfg")
+enabled=PackedStringArray()
+
+[gui]
+
+theme/custom="res://themes/main_theme.tres"
 
 [maaacks_game_template]
 

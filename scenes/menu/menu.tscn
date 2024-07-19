@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://ct6e7a3qoefsm"]
+[gd_scene load_steps=6 format=3 uid="uid://ct6e7a3qoefsm"]
 
 [ext_resource type="Script" path="res://scripts/menus/main_menu.gd" id="1_r0vpv"]
 [ext_resource type="StyleBox" uid="uid://cdf2gde8xnf5y" path="res://themes/list.tres" id="2_30cya"]
 [ext_resource type="Script" path="res://scripts/menus/options.gd" id="2_c7qvc"]
+[ext_resource type="Theme" uid="uid://dx3gt8a723n5e" path="res://themes/main_theme.tres" id="3_4u03a"]
 [ext_resource type="Script" path="res://scripts/menus/select_level.gd" id="3_h4yt8"]
 
 [node name="MainMenu" type="Control"]
@@ -21,10 +22,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -96.5
-offset_top = -81.5
-offset_right = 96.5
-offset_bottom = 81.5
+offset_left = -166.0
+offset_top = -175.0
+offset_right = 167.0
+offset_bottom = 147.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = ExtResource("2_30cya")
@@ -34,22 +35,29 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="MainPanelContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("3_4u03a")
+theme_type_variation = &"HeaderLarge"
 text = "Unpredictable Chemistry"
 
 [node name="SelectLevelButton" type="Button" parent="MainPanelContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 3
 text = "Select Level"
 
 [node name="OptionsButton" type="Button" parent="MainPanelContainer/VBoxContainer"]
 layout_mode = 2
-text = "Options"
+size_flags_vertical = 3
+text = "Settings"
 
 [node name="CreditsButton" type="Button" parent="MainPanelContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 3
 text = "Credits"
 
 [node name="ExitButton" type="Button" parent="MainPanelContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 3
 text = "Exit
 "
 
@@ -76,6 +84,7 @@ layout_mode = 2
 [node name="VideoLabel" type="Label" parent="OptionsPanelContainer/VBoxContainer"]
 layout_mode = 2
 text = "Video"
+horizontal_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="OptionsPanelContainer/VBoxContainer"]
 layout_mode = 2
@@ -113,6 +122,7 @@ layout_mode = 2
 [node name="AudioLabel" type="Label" parent="OptionsPanelContainer/VBoxContainer"]
 layout_mode = 2
 text = "Audio"
+horizontal_alignment = 1
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="OptionsPanelContainer/VBoxContainer"]
 layout_mode = 2
@@ -120,13 +130,32 @@ layout_mode = 2
 [node name="Label" type="Label" parent="OptionsPanelContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Sounds"
+text = "Music"
 
 [node name="HSlider" type="HSlider" parent="OptionsPanelContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 3
 max_value = 80.0
 value = 80.0
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="OptionsPanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="OptionsPanelContainer/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Sounds"
+
+[node name="HSlider" type="HSlider" parent="OptionsPanelContainer/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 80.0
+value = 80.0
+
+[node name="BackButton" type="Button" parent="OptionsPanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Back"
 
 [node name="SelectLevelPanelContainer" type="PanelContainer" parent="."]
 visible = false
@@ -136,10 +165,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -106.5
-offset_top = -46.5
-offset_right = 106.5
-offset_bottom = 46.5
+offset_left = -111.0
+offset_top = -114.0
+offset_right = 112.0
+offset_bottom = 108.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = ExtResource("2_30cya")
@@ -176,6 +205,10 @@ text = "+"
 layout_mode = 2
 text = "Go"
 
+[node name="BackButton" type="Button" parent="SelectLevelPanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "Back"
+
 [node name="CreditsPanelContainer" type="PanelContainer" parent="."]
 visible = false
 layout_mode = 1
@@ -184,38 +217,39 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -162.0
-offset_top = -46.0
-offset_right = 162.0
-offset_bottom = 46.0
+offset_left = -229.0
+offset_top = -183.0
+offset_right = 230.0
+offset_bottom = 197.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = ExtResource("2_30cya")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="CreditsPanelContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CreditsPanelContainer"]
 layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CreditsPanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
 bbcode_enabled = true
-text = "Programer and artist
+text = "[center] This game is created for [url=godotwildjam.coms]Godot Wild Jam #71[/url]
+
+Art, music and program created by
 Kutsyk Alexander
 
-All sound effectcs from opengameart.com"
-fit_content = true
-autowrap_mode = 0
+All sound effects from [url=https://opengameart.com]opengameart.com[/url]
+[url=https://opengameart.org/content/glass-break]Glass break by Till Behrend[/url]
+[url=https://opengameart.org/content/mechanical-explosion]Mechanical explosion by Spring Spring[/url]
+[url=https://opengameart.org/content/bubble-sound-effects]Bubble sound effects by BMacZero[/url]
+[url=shttps://opengameart.org/content/6-short-water-splashes]Short water splashes by ezwa[/url]
 
-[node name="BackButton" type="Button" parent="."]
-visible = false
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -22.5
-offset_top = -98.0
-offset_right = 22.5
-offset_bottom = -67.0
-grow_horizontal = 2
-grow_vertical = 0
+Font [url=https://fonts.google.com/]\"Permanent marker\" by Font Diner[/url]
+
+2024[/center]"
+
+[node name="BackButton" type="Button" parent="CreditsPanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
 text = "Back"
 
 [connection signal="pressed" from="MainPanelContainer/VBoxContainer/SelectLevelButton" to="." method="show_select_level"]
@@ -224,8 +258,11 @@ text = "Back"
 [connection signal="pressed" from="MainPanelContainer/VBoxContainer/ExitButton" to="." method="exit_games"]
 [connection signal="item_selected" from="OptionsPanelContainer/VBoxContainer/HBoxContainer/OptionButton" to="OptionsPanelContainer" method="_on_option_button_item_selected"]
 [connection signal="toggled" from="OptionsPanelContainer/VBoxContainer/HBoxContainer3/CheckButton" to="OptionsPanelContainer" method="_on_check_button_toggled"]
-[connection signal="value_changed" from="OptionsPanelContainer/VBoxContainer/HBoxContainer2/HSlider" to="OptionsPanelContainer" method="_on_h_slider_value_changed"]
+[connection signal="value_changed" from="OptionsPanelContainer/VBoxContainer/HBoxContainer2/HSlider" to="OptionsPanelContainer" method="_on_music_slider_value_changed"]
+[connection signal="value_changed" from="OptionsPanelContainer/VBoxContainer/HBoxContainer4/HSlider" to="OptionsPanelContainer" method="_on_sound_slider_value_changed"]
+[connection signal="pressed" from="OptionsPanelContainer/VBoxContainer/BackButton" to="." method="show_main_menu"]
 [connection signal="pressed" from="SelectLevelPanelContainer/VBoxContainer/HBoxContainer/DecreaseButton" to="SelectLevelPanelContainer" method="decrease_level"]
 [connection signal="pressed" from="SelectLevelPanelContainer/VBoxContainer/HBoxContainer/IncreaseButton" to="SelectLevelPanelContainer" method="increase_level"]
 [connection signal="pressed" from="SelectLevelPanelContainer/VBoxContainer/GoButton" to="SelectLevelPanelContainer" method="load_level"]
-[connection signal="pressed" from="BackButton" to="." method="show_main_menu"]
+[connection signal="pressed" from="SelectLevelPanelContainer/VBoxContainer/BackButton" to="." method="show_main_menu"]
+[connection signal="pressed" from="CreditsPanelContainer/VBoxContainer/BackButton" to="." method="show_main_menu"]

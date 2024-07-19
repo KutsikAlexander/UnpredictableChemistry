@@ -28,26 +28,28 @@ Key features:
 - - [x] Explosion
 - - [x] Change color
 - - [x] Solid fall
-- [ ] Menu
+- [x] Menu
 - [x] Next level button
 
 Additional features
-- [ ] Tutorial
-- [ ] Nice background
+- [x] Tutorial
+- [x] Nice background
 - [ ] Statistic (time, number of combinations)
 
 References:
 - Liquid sort puzzle
-- ?
-- ?
 
 # Third party assets
 ## Sound effects
 
-- [Glass break](https://opengameart.org/content/glass-break)
-- [Mechanical explosion](https://opengameart.org/content/mechanical-explosion)
-- [Bubble sound effects](https://opengameart.org/content/bubble-sound-effects)
-- [Short water splashes](https://opengameart.org/content/6-short-water-splashes)
+- [Glass break by Till Behrend](https://opengameart.org/content/glass-break)
+- [Mechanical explosion by Spring Spring](https://opengameart.org/content/mechanical-explosion)
+- [Bubble sound effects by BMacZero](https://opengameart.org/content/bubble-sound-effects)
+- [Short water splashes by ezwa](https://opengameart.org/content/6-short-water-splashes)
+
+## Font
+
+[Permanent marker by Font Diner](https://fonts.google.com/)
 
 # Author
 

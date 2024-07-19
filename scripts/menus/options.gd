@@ -2,6 +2,8 @@ extends PanelContainer
 
 @onready var resolution_selector: OptionButton = $VBoxContainer/HBoxContainer/OptionButton
 @onready var full_screen_toggle: CheckButton = $VBoxContainer/HBoxContainer3/CheckButton
+@onready var music_slider: Slider = $VBoxContainer/HBoxContainer2/HSlider
+@onready var sound_slider: Slider = $VBoxContainer/HBoxContainer4/HSlider
 
 func _ready() -> void:
 	resolution_selector.text = str(get_window().size.x) + "x" + str(get_window().size.y)
@@ -9,6 +11,8 @@ func _ready() -> void:
 		full_screen_toggle.button_pressed = true
 	else:
 		full_screen_toggle.button_pressed = false
+	music_slider.value = AudioServer.get_bus_volume_db(AudioServer.get_bus_index("Music")) + 80
+	sound_slider.value = AudioServer.get_bus_volume_db(AudioServer.get_bus_index("SFX")) + 80
 	
 
 func _on_check_button_toggled(toggled_on:bool) -> void:
@@ -16,10 +20,6 @@ func _on_check_button_toggled(toggled_on:bool) -> void:
 		get_window().mode = Window.MODE_FULLSCREEN
 	else:
 		get_window().mode = Window.MODE_WINDOWED
-
-func _on_h_slider_value_changed(value:float) -> void:
-	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("SFX"), value - 80)
-
 
 func _on_option_button_item_selected(index:int) -> void:
 	match index:
@@ -31,3 +31,9 @@ func _on_option_button_item_selected(index:int) -> void:
 			get_window().size = Vector2i(1920, 1080)
 		_:
 			get_window().size = Vector2i(1920, 1080)
+
+func _on_sound_slider_value_changed(value:float) -> void:
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("SFX"), value - 80)
+
+func _on_music_slider_value_changed(value:float) -> void:
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Music"), value - 80)

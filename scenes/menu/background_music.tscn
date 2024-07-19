@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c06em78plywh1"]
+
+[ext_resource type="AudioStream" uid="uid://d3jg85lx7ijqo" path="res://music/Unpredictable Chemistry.wav" id="1_piyh0"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_piyh0")
+autoplay = true
+bus = &"Music"
